@@ -6,6 +6,16 @@ from operator import itemgetter
 import sys
  
 def read_mapper_output(file, separator='\t'):
+24
+            # count was not a number, so silently discard this item
+25
+            pass
+26
+ 
+27
+if __name__ == "__main__":
+28
+    main()
     for line in file:
         yield line.rstrip().split(separator, 1)
  
@@ -21,8 +31,4 @@ def main(separator='\t'):
             total_count = sum(int(count) for current_word, count in group)
             print "%s%s%d" % (current_word, separator, total_count)
         except ValueError:
-            #count was not a number
-            pass
 
-if __name__ == "__main__":
-   main()
