@@ -5,7 +5,7 @@ import sys
 # Map function
 # mr - MapReduce object
 # data - json object formatted as a string
-def mapper(mr, data):
+def mapper(mr, dataline):
     data = json.loads(dataline, encoding='latin-1')
 
     # output (key, value) pair (only for mapper)
